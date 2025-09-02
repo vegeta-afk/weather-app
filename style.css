@@ -1,0 +1,183 @@
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Poppins", sans-serif;
+        color: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        padding: 20px;
+        position: relative;
+        overflow: hidden;
+        background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+      }
+
+      .weather-card {
+        background: rgba(255, 255, 255, 0.08);
+        padding: 30px;
+        border-radius: 16px;
+        width: 100%;
+        max-width: 400px;
+        text-align: center;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+        backdrop-filter: blur(10px);
+        z-index: 1;
+        transition: all 0.3s ease;
+      }
+
+      .search-container {
+        display: flex;
+        margin-bottom: 25px;
+        gap: 10px;
+      }
+
+      .search-container input {
+        flex: 1;
+        padding: 10px 15px;
+        border: none;
+        border-radius: 25px;
+        background: rgba(255, 255, 255, 0.1);
+        color: white;
+        font-size: 16px;
+        outline: none;
+        transition: background 0.3s ease;
+      }
+
+      .search-container input:focus {
+        background: rgba(255, 255, 255, 0.15);
+      }
+
+      .search-container input::placeholder {
+        color: rgba(255, 255, 255, 0.6);
+      }
+
+      .search-container button {
+        padding: 10px 20px;
+        border: none;
+        border-radius: 25px;
+        background: rgba(255, 255, 255, 0.2);
+        color: white;
+        cursor: pointer;
+        transition: background 0.3s ease;
+      }
+
+      .search-container button:hover {
+        background: rgba(255, 255, 255, 0.3);
+      }
+
+      .city-name {
+        font-size: 28px;
+        font-weight: 600;
+        margin-bottom: 5px;
+      }
+
+      .temperature {
+        font-size: 64px;
+        font-weight: 300;
+        margin: 15px 0;
+      }
+
+      .weather-condition {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        margin-bottom: 20px;
+        font-size: 18px;
+      }
+
+      .weather-icon {
+        width: 40px;
+        height: 40px;
+      }
+
+      .details {
+        display: flex;
+        justify-content: space-around;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        padding-top: 20px;
+      }
+
+      .detail-item {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+      }
+
+      .detail-label {
+        font-size: 14px;
+        opacity: 0.7;
+      }
+
+      .detail-value {
+        font-size: 18px;
+        font-weight: 500;
+      }
+
+      #background-image {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        object-fit: cover;
+        transition: opacity 1s ease;
+      }
+
+      .image-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.4);
+        z-index: -1;
+      }
+
+      .loading {
+        opacity: 0.6;
+        pointer-events: none;
+        position: relative;
+      }
+
+      .loading::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 30px;
+        height: 30px;
+        margin: -15px 0 0 -15px;
+        border: 3px solid rgba(255, 255, 255, 0.3);
+        border-radius: 50%;
+        border-top-color: #fff;
+        animation: spin 1s ease-in-out infinite;
+      }
+
+      @keyframes spin {
+        to {
+          transform: rotate(360deg);
+        }
+      }
+
+      .error-message {
+        color: #ff6b6b;
+        margin-top: 10px;
+        font-size: 14px;
+        min-height: 20px;
+      }
+
+      .image-credit {
+        position: fixed;
+        bottom: 10px;
+        right: 10px;
+        font-size: 10px;
+        opacity: 0.7;
+        z-index: 2;
+      }
